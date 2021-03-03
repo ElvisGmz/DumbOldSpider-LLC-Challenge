@@ -17,14 +17,14 @@ export default function Home() {
   }, [page]);
 
   function nextPage() {
-    if (page < info.count && page >= 1) {
+    if (page < info.pages && page >= 1) {
       setPage(page + 1);
       window.scrollTo(0, 0);
     }
   }
 
   function previousPage() {
-    if (page <= info.count && page > 1) {
+    if (page <= info.pages && page > 1) {
       setPage(page - 1);
       window.scrollTo(0, 0);
     }
@@ -47,7 +47,7 @@ export default function Home() {
           </Card>
         ))}
       </Container>
-      <Pagination page={page} count={info.count}>
+      <Pagination page={page} pages={info.pages}>
         <div id="left" onClick={previousPage}>
           {"<"}
         </div>
@@ -145,6 +145,11 @@ const Pagination = styled.div`
     width: 100%;
     cursor: pointer;
   }
+
+  #right {
+    display: ${({ page, pages }) => (page < pages ? "auto" : "none")};
+  }
+
   #left {
     display: ${({ page }) => (page > 1 ? "auto" : "none")};
   }
@@ -155,8 +160,8 @@ const Pagination = styled.div`
     text-transform: capitalize;
     ${({ page }) =>
       page > 1 && `border-left: 1px solid ${useTheme("#f6f5f5", "#1a1a2e")};`};
-    ${({ page, count }) =>
-      page < count &&
+    ${({ page, pages }) =>
+      page < pages &&
       `border-right: 1px solid ${useTheme("#f6f5f5", "#1a1a2e")};`};
   }
 `;

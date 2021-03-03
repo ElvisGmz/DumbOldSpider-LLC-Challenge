@@ -126,7 +126,7 @@ Add a <Suspense fallback=...> component higher in the tree to provide a loading 
       }
     }
   }
-`;var fe=de(at());function ds(){let[e,t]=fe.useState([]),[n,r]=fe.useState([]),[o,i]=fe.useState(1);fe.useEffect(()=>{fetch(`https://rickandmortyapi.com/api/character?page=${o}`).then(a=>a.json()).then(a=>{t(a.results),r(a.info)})},[o]);function l(){o<n.count&&o>=1&&(i(o+1),window.scrollTo(0,0))}function u(){o<=n.count&&o>1&&(i(o-1),window.scrollTo(0,0))}return fe.default.createElement(fe.default.Fragment,null,fe.default.createElement(B1,null,e.map(a=>fe.default.createElement(F1,{status:a.status,key:a.id},fe.default.createElement("img",{src:a.image,alt:a.name}),fe.default.createElement("h1",null,a.name),fe.default.createElement("p",null,a.species),fe.default.createElement("p",{id:"status"},a.status=="Alive"&&"\u2764 ",a.status=="Dead"&&"\u{1F480} ",a.status=="unknown"&&"\u2754 ",a.status)))),fe.default.createElement(L1,{page:o,count:n.count},fe.default.createElement("div",{id:"left",onClick:u},"<"),fe.default.createElement("div",{id:"number"},fe.default.createElement("p",null,o)),fe.default.createElement("div",{id:"right",onClick:l},">")))}var B1=vt.main`
+`;var fe=de(at());function ds(){let[e,t]=fe.useState([]),[n,r]=fe.useState([]),[o,i]=fe.useState(1);fe.useEffect(()=>{fetch(`https://rickandmortyapi.com/api/character?page=${o}`).then(a=>a.json()).then(a=>{t(a.results),r(a.info)})},[o]);function l(){o<n.pages&&o>=1&&(i(o+1),window.scrollTo(0,0))}function u(){o<=n.pages&&o>1&&(i(o-1),window.scrollTo(0,0))}return fe.default.createElement(fe.default.Fragment,null,fe.default.createElement(B1,null,e.map(a=>fe.default.createElement(F1,{status:a.status,key:a.id},fe.default.createElement("img",{src:a.image,alt:a.name}),fe.default.createElement("h1",null,a.name),fe.default.createElement("p",null,a.species),fe.default.createElement("p",{id:"status"},a.status=="Alive"&&"\u2764 ",a.status=="Dead"&&"\u{1F480} ",a.status=="unknown"&&"\u2754 ",a.status)))),fe.default.createElement(L1,{page:o,pages:n.pages},fe.default.createElement("div",{id:"left",onClick:u},"<"),fe.default.createElement("div",{id:"number"},fe.default.createElement("p",null,o)),fe.default.createElement("div",{id:"right",onClick:l},">")))}var B1=vt.main`
   max-width: 1144px;
   margin: auto;
   display: flex;
@@ -197,6 +197,11 @@ Add a <Suspense fallback=...> component higher in the tree to provide a loading 
     width: 100%;
     cursor: pointer;
   }
+
+  #right {
+    display: ${({page:e,pages:t})=>e<t?"auto":"none"};
+  }
+
   #left {
     display: ${({page:e})=>e>1?"auto":"none"};
   }
@@ -206,7 +211,7 @@ Add a <Suspense fallback=...> component higher in the tree to provide a loading 
     padding: 0.3rem 1rem;
     text-transform: capitalize;
     ${({page:e})=>e>1&&`border-left: 1px solid ${Ke("#f6f5f5","#1a1a2e")};`};
-    ${({page:e,count:t})=>e<t&&`border-right: 1px solid ${Ke("#f6f5f5","#1a1a2e")};`};
+    ${({page:e,pages:t})=>e<t&&`border-right: 1px solid ${Ke("#f6f5f5","#1a1a2e")};`};
   }
 `;var Eh=de(at());function hs(){return Eh.default.createElement(I1,null,"Construyendo...")}var I1=vt.main`
   max-width: 1144px;
