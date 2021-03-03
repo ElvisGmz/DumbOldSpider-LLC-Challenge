@@ -1,5 +1,5 @@
 export const LightTheme = {
-    bg: "#fff",
+    bg: "#f6f5f5",
     color: "#000000",   
 
     navBg: "#276678",
@@ -9,9 +9,8 @@ export const LightTheme = {
 }
 
 export const DarkTheme = {
-    bg: "#21212c",
+    bg: "#1a1a2e",
     color: "#fff",   
-
     navBg: "#e94560",
     navColor: "#fff",
 

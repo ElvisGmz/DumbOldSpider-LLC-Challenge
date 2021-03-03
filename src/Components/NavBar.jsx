@@ -76,7 +76,7 @@ const Nav = styled.nav`
       color: ${LightTheme.navColor};
       text-decoration: none;
       font-size: ${Sizes.navLinksSize};
-      padding: 1.5rem;
+      padding: 0.75rem;
       font-weight: 700;
       font-style: italic;
 
@@ -112,7 +112,7 @@ const Nav = styled.nav`
         }
 
         &:last-child {
-          padding-right: 1.5rem;
+          padding-right: 0.75rem;
         }
       }
     }
