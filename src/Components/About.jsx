@@ -18,7 +18,7 @@ const Container = styled.main`
   flex-flow: row wrap;
   box-sizing: border-box;
   padding: 10px;
-  padding-top: 70px;
+  padding-top: 64px;
   min-height: calc(100vh - 2rem);
   background-color:red;
 `;

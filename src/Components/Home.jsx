@@ -42,7 +42,7 @@ export default function Home() {
           </Card>
         ))}
       </Container>
-      <Pagination>
+      <Pagination page={page} count={info.count}>
         <div id="left" onClick={previousPage}>
           {"<"}
         </div>
@@ -66,7 +66,7 @@ const Container = styled.main`
   flex-flow: row wrap;
   box-sizing: border-box;
   padding: 10px;
-  padding-top: 70px;
+  padding-top: 64px;
   min-height: calc(100vh - 3rem);
 `;
 
@@ -140,11 +140,14 @@ const Pagination = styled.div`
     width: 100%;
     cursor: pointer;
   }
+  #left{
+    display: ${({page}) => page > 1 ? 'auto' : 'none'};
+  }
 
   div p {
     margin: 0;
     padding: 0.3rem 1rem;
-    border-left: 1px solid ${useTheme("#f6f5f5", "#1a1a2e")};
-    border-right: 1px solid ${useTheme("#f6f5f5", "#1a1a2e")};
+    ${({page}) => page > 1 && `border-left: 1px solid ${useTheme("#f6f5f5", "#1a1a2e")};`};
+    ${({page, count}) => page < count && `border-right: 1px solid ${useTheme("#f6f5f5", "#1a1a2e")};`};
   }
 `;

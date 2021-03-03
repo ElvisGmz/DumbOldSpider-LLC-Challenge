@@ -10,7 +10,7 @@ export default function NavBar() {
     <NavContainer>
       <Nav isOpen={isBarOpen ? "0" : "100%"}>
         <div id="logo">
-          <h1>DumbOldSpider🕷 LLC</h1>
+          <h1>DumbOldSpider LLC</h1>
           <p>Art and Desing Studio</p>
         </div>
         <div id="links">
@@ -76,7 +76,7 @@ const Nav = styled.nav`
       color: ${LightTheme.navColor};
       text-decoration: none;
       font-size: ${Sizes.navLinksSize};
-      padding: 0.75rem;
+      padding: 0.50rem 1rem;
       font-weight: 700;
       font-style: italic;
 
@@ -91,10 +91,10 @@ const Nav = styled.nav`
 
     @media only screen and (max-width: 768px) {
       position: absolute;
-      top: 60px;
+      top: 54px;
       left: ${({ isOpen }) => isOpen};
       flex-flow: column nowrap;
-      min-height: calc(100vh - 60px);
+      min-height: calc(100vh - 54px);
       background-color: ${LightTheme.bg};
 
       @media (prefers-color-scheme: dark) {
