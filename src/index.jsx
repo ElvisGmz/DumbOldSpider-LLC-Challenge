@@ -6,6 +6,10 @@ import App from "./App";
 
 const GlobalStyles = createGlobalStyle`
 
+html{
+  scrollbar-width: none;
+}
+
 body{
     margin: 0;
     min-height: 100vh;

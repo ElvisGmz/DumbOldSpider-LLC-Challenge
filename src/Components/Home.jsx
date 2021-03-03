@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import useTheme from "value-theme-return";
 import styled from "styled-components";
 
 export default function Home() {
     const [characters, setCharacters] = useState([]);
-    const [page, setPage] = useState(2);
+    const [page, setPage] = useState(1);
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
       .then((res) => res.json())
@@ -37,7 +38,9 @@ const Container = styled.main`
 
 const Card = styled.div`
   margin: 10px;
-  background-color: #32323c;
+  background-color: ${useTheme('#1687a7', '#16213e')};
+  /* 0f3460 */
+  box-shadow: 0px 0px 10px ${useTheme('#80808c', '#11111c')};
   border-radius: 5px;
   overflow: hidden;
   width: 100%;
@@ -58,26 +61,27 @@ const Card = styled.div`
 
     &::first-letter {
     font-size: 38px;
-    color: #00ffff;
+    color: ${useTheme('crimson', '#00ffff')};
   }
   }
 
 p {
   margin: 0 1rem 15px;
-  color: greenyellow;
+  color: ${useTheme('#FFF', 'greenyellow')};
   font-weight: 700;
   font-style: italic;
 }
 
 p#status {
   margin: 0 1rem 15px;
+  color:
    ${({status}) => {
      if (status == 'Alive') {
-        return 'color: #2fffff;'
+        return 'yellow';
      }else if (status == 'Dead'){
-        return 'color: pink;'
+         return 'pink'
      }else{
-         return 'color: white;'
+         return 'white'
      }
   }};
   font-weight: 700;

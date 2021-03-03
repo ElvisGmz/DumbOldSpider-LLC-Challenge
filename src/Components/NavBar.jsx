@@ -33,7 +33,6 @@ const NavContainer = styled.header`
   align-items: center;
   box-sizing: border-box;
   background-color: ${LightTheme.navBg};
-  background-image: ${LightTheme.navImgBg};
   color: ${LightTheme.navColor};
   position: fixed;
   width: 100vw;
