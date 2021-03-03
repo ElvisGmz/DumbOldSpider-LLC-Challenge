@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 export default function Home() {
-  const [characters, setCharacters] = useState([]);
+    const [characters, setCharacters] = useState([]);
+    const [page, setPage] = useState(2);
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
+    fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
       .then((res) => res.json())
       .then((res) => setCharacters(res.results));
   }, []);
@@ -41,6 +42,7 @@ const Card = styled.div`
   overflow: hidden;
   width: 100%;
   flex: 31%;
+  min-height: 385.6px;
   min-width: 300px;
   max-width: 350px;
 
@@ -82,6 +84,4 @@ p#status {
   font-style: italic;
   text-align: right;
 }
-
-  
 `;
