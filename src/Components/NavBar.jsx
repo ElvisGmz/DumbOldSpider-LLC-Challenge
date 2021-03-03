@@ -91,10 +91,10 @@ const Nav = styled.nav`
 
     @media only screen and (max-width: 768px) {
       position: absolute;
-      top: 64px;
+      top: 60px;
       left: ${({ isOpen }) => isOpen};
       flex-flow: column nowrap;
-      min-height: calc(100vh - 64px);
+      min-height: calc(100vh - 60px);
       background-color: ${LightTheme.bg};
 
       @media (prefers-color-scheme: dark) {

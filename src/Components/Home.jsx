@@ -66,7 +66,8 @@ const Container = styled.main`
   flex-flow: row wrap;
   box-sizing: border-box;
   padding: 10px;
-  padding-top: 74px;
+  padding-top: 70px;
+  min-height: calc(100vh - 3rem);
 `;
 
 const Card = styled.div`
@@ -78,14 +79,14 @@ const Card = styled.div`
   overflow: hidden;
   width: 100%;
   flex: 31%;
-  min-height: 385.6px;
+  min-height: 365.6px;
   min-width: 300px;
   max-width: 350px;
 
   img {
     object-fit: cover;
     width: 100%;
-    max-height: 250px;
+    height: 250px;
   }
 
   h1 {
@@ -95,6 +96,7 @@ const Card = styled.div`
     &::first-letter {
       font-size: 38px;
       color: ${useTheme("yellow", "#00ffff")};
+      text-shadow: -2px 2px  crimson;
     }
   }
 
@@ -102,7 +104,6 @@ const Card = styled.div`
     margin: 0 1rem 15px;
     color: ${useTheme("#FFF", "greenyellow")};
     font-weight: 700;
-    font-style: italic;
   }
 
   p#status {
