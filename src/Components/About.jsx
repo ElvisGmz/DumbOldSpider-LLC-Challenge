@@ -18,6 +18,6 @@ const Container = styled.main`
   flex-flow: row wrap;
   box-sizing: border-box;
   padding: 10px;
-  padding-top: 64px;
+  padding-top: 66px;
   min-height: calc(100vh - 2rem);
 `;

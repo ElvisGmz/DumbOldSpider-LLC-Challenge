@@ -1,8 +1,8 @@
 export const LightTheme = {
-    bg: "#f6f5f5",
-    color: "#000000",   
+    bg: "#1687a7",
+    color: "#FFF",   
 
-    navBg: "#276678",
+    navBg: "#1687a7",
     navColor: "#FFF",
 
     burguerColor: "#FFF",

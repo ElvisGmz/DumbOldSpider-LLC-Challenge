@@ -1,12 +1,16 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
-import "./styles.css"
 import { LightTheme, DarkTheme, Fonts } from "./StylesValues/constants";
 import { createGlobalStyle } from "styled-components";
 import App from "./App";
+import font from "./fonts/Inconsolata-VariableFont_wdth,wght.ttf";
 
 const GlobalStyles = createGlobalStyle`
-
+@font-face{
+    font-family: "Inconsolata";
+    src: url(${font}) format("truetype-variations");
+    font-weight: 100 900;
+  }
 
 html{
   scrollbar-width: none;
@@ -25,6 +29,10 @@ body{
     background-color: ${DarkTheme.bg};
     color: ${DarkTheme.color};
     }
+  }
+
+  html::-webkit-scrollbar{
+    width: 0;
   }
 `;
 

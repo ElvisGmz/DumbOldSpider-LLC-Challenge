@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import useTheme from "value-theme-return";
 import { LightTheme, DarkTheme, Sizes } from "../StylesValues/constants";
 
 export default function NavBar() {
@@ -36,6 +37,8 @@ const NavContainer = styled.header`
   color: ${LightTheme.navColor};
   position: fixed;
   width: 100vw;
+  z-index: 10000;
+  box-shadow: 0px 0px 5px ${useTheme("#858ea5", "#11111c")};
   
 
   @media (prefers-color-scheme: dark) {
@@ -53,17 +56,17 @@ const Nav = styled.nav`
   max-width: ${Sizes.maxAppWidth};
   box-sizing: border-box;
   padding: ${Sizes.paddingNav};
+  font-style: italic;
 
   #logo h1 {
     font-size: ${Sizes.logoFontSize};
     letter-spacing: ${Sizes.logoSpacing};
-    font-style: italic;
     margin: 0;
+    
   }
 
   #logo p {
     margin: 0;
-    font-style: italic;
   }
 
   #links {
@@ -71,6 +74,7 @@ const Nav = styled.nav`
     justify-content: center;
     align-items: center;
     transition: all 0.3s;
+  z-index: 1000;
 
     a {
       color: ${LightTheme.navColor};
@@ -91,10 +95,10 @@ const Nav = styled.nav`
 
     @media only screen and (max-width: 768px) {
       position: absolute;
-      top: 54px;
+      top: 56px;
       left: ${({ isOpen }) => isOpen};
       flex-flow: column nowrap;
-      min-height: calc(100vh - 54px);
+      min-height: calc(100vh - 56px);
       background-color: ${LightTheme.bg};
 
       @media (prefers-color-scheme: dark) {

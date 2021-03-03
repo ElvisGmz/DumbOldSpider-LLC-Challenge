@@ -16,18 +16,18 @@ export default function Home() {
       });
   }, [page]);
 
-  function nextPage(){
-      if(page < info.count && page >= 1){
-          setPage(page + 1);
-          window.scrollTo(0, 0);
-      }
+  function nextPage() {
+    if (page < info.count && page >= 1) {
+      setPage(page + 1);
+      window.scrollTo(0, 0);
+    }
   }
 
-  function previousPage(){
-      if(page <= info.count && page > 1){
-          setPage(page - 1);
-          window.scrollTo(0, 0);
-      }
+  function previousPage() {
+    if (page <= info.count && page > 1) {
+      setPage(page - 1);
+      window.scrollTo(0, 0);
+    }
   }
 
   return (
@@ -38,7 +38,12 @@ export default function Home() {
             <img src={element.image} alt={element.name} />
             <h1>{element.name}</h1>
             <p>{element.species}</p>
-            <p id="status">{element.status}</p>
+            <p id="status">
+              {element.status == "Alive" && "❤ "}
+              {element.status == "Dead" && "💀 "}
+              {element.status == "unknown" && "❔ "}
+              {element.status}
+            </p>
           </Card>
         ))}
       </Container>
@@ -66,7 +71,7 @@ const Container = styled.main`
   flex-flow: row wrap;
   box-sizing: border-box;
   padding: 10px;
-  padding-top: 64px;
+  padding-top: 66px;
   min-height: calc(100vh - 3rem);
 `;
 
@@ -74,7 +79,7 @@ const Card = styled.div`
   margin: 10px;
   background-color: ${useTheme("#1687a7", "#16213e")};
   /* 0f3460 */
-  box-shadow: 0px 0px 10px ${useTheme("#80808c", "#11111c")};
+  box-shadow: 0px 0px 5px ${useTheme("#858ea5", "#11111c")};
   border-radius: 5px;
   overflow: hidden;
   width: 100%;
@@ -96,7 +101,7 @@ const Card = styled.div`
     &::first-letter {
       font-size: 38px;
       color: ${useTheme("yellow", "#00ffff")};
-      text-shadow: -2px 2px  crimson;
+      text-shadow: -2px 2px crimson;
     }
   }
 
@@ -110,9 +115,9 @@ const Card = styled.div`
     margin: 0 1rem 15px;
     color: ${({ status }) => {
       if (status == "Alive") {
-        return "yellow";
+        return "cyan";
       } else if (status == "Dead") {
-        return "pink";
+        return "crimson";
       } else {
         return "white";
       }
@@ -140,14 +145,18 @@ const Pagination = styled.div`
     width: 100%;
     cursor: pointer;
   }
-  #left{
-    display: ${({page}) => page > 1 ? 'auto' : 'none'};
+  #left {
+    display: ${({ page }) => (page > 1 ? "auto" : "none")};
   }
 
   div p {
     margin: 0;
     padding: 0.3rem 1rem;
-    ${({page}) => page > 1 && `border-left: 1px solid ${useTheme("#f6f5f5", "#1a1a2e")};`};
-    ${({page, count}) => page < count && `border-right: 1px solid ${useTheme("#f6f5f5", "#1a1a2e")};`};
+    text-transform: capitalize;
+    ${({ page }) =>
+      page > 1 && `border-left: 1px solid ${useTheme("#f6f5f5", "#1a1a2e")};`};
+    ${({ page, count }) =>
+      page < count &&
+      `border-right: 1px solid ${useTheme("#f6f5f5", "#1a1a2e")};`};
   }
 `;
