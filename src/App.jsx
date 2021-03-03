@@ -19,6 +19,6 @@ export default function App() {
 }
 
 const AppContainer = styled.div`
-  background-color: ${useTheme("#f6f5f5",
-   "#1a1a2e")};
+  background-color: ${useTheme("#f6f5f5", "#1a1a2e")};
+  padding-bottom: 2rem;
 `;
