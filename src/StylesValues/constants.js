@@ -1,21 +1,21 @@
 export const LightTheme = {
-    bg: "#FFFFFF",
+    bg: "#fff",
     color: "#000000",   
 
     navBg: "#276678",
     navColor: "#FFF",
 
-    burguerColor: "#222831",
+    burguerColor: "#FFF",
 }
 
 export const DarkTheme = {
     bg: "#21212c",
-    color: "#f0f0f0",   
+    color: "#fff",   
 
     navBg: "#e94560",
-    navColor: "#f0f0f0",
+    navColor: "#fff",
 
-    burguerColor: "#f0f0f0",
+    burguerColor: "#fff",
 }
 
 export const Sizes = {

@@ -66,7 +66,7 @@ const Container = styled.main`
   flex-flow: row wrap;
   box-sizing: border-box;
   padding: 10px;
-  padding-top: 98px;
+  padding-top: 74px;
 `;
 
 const Card = styled.div`

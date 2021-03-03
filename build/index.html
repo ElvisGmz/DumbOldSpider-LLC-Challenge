@@ -4,8 +4,23 @@
     <title>DumbOldSpider - LLC</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="https://www.flaticon.com/svg/vstatic/svg/2253/2253716.svg?token=exp=1614763224~hmac=704dde9bb5a3fb7fc08e6aca589efcfd" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="https://www.flaticon.com/svg/vstatic/svg/2253/2253716.svg?token=exp=1614763224~hmac=704dde9bb5a3fb7fc08e6aca589efcfd"
+      type="image/x-icon"
+    />
     <link href="bundle.css" rel="stylesheet" />
+    <script>
+      if (
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        ) {
+          document.head.innerHTML = '<meta name="theme-color" content="#e94560">';
+        } else {
+          document.head.innerHTML = '<meta name="theme-color" content="#276678">';
+        }
+      
+    </script>
   </head>
   <body>
     <div id="app"></div>

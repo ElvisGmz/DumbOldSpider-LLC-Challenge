@@ -84,7 +84,6 @@ const Nav = styled.nav`
         color: ${DarkTheme.navColor};
       }
 
-
       &:hover {
         text-decoration: underline;
       }
@@ -92,10 +91,10 @@ const Nav = styled.nav`
 
     @media only screen and (max-width: 768px) {
       position: absolute;
-      top: 88px;
+      top: 64px;
       left: ${({ isOpen }) => isOpen};
       flex-flow: column nowrap;
-      min-height: calc(100vh - 88px);
+      min-height: calc(100vh - 64px);
       background-color: ${LightTheme.bg};
 
       @media (prefers-color-scheme: dark) {
@@ -123,8 +122,8 @@ const Nav = styled.nav`
     background-color: transparent;
     border: none;
     aspect-ratio: 1 / 1;
-    min-height: 40px;
-    width: 45px;
+    min-height: 35px;
+    width: 40px;
     display: none;
     justify-content: space-evenly;
     align-items: center;
