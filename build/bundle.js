@@ -215,7 +215,6 @@ Add a <Suspense fallback=...> component higher in the tree to provide a loading 
   padding: 10px;
   padding-top: 64px;
   min-height: calc(100vh - 2rem);
-  background-color:red;
 `;function ms(){return Cn.createElement($g,null,Cn.createElement(gh,null,Cn.createElement(ps,null),Cn.createElement(yh,null,Cn.createElement(us,{exact:!0,path:"/",component:ds}),Cn.createElement(us,{path:"/about",component:hs}))))}var $g=mt.div`
   background-color: ${vt("#f6f5f5","#1a1a2e")};
   min-height: calc(100vh - 54px);

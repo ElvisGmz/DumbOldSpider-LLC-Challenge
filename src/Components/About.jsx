@@ -20,5 +20,4 @@ const Container = styled.main`
   padding: 10px;
   padding-top: 64px;
   min-height: calc(100vh - 2rem);
-  background-color:red;
 `;
