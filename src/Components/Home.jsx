@@ -61,7 +61,7 @@ const Card = styled.div`
 
     &::first-letter {
     font-size: 38px;
-    color: ${useTheme('crimson', '#00ffff')};
+    color: ${useTheme('yellow', '#00ffff')};
   }
   }
 

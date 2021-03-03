@@ -159,7 +159,7 @@ Add a <Suspense fallback=...> component higher in the tree to provide a loading 
 
     &::first-letter {
     font-size: 38px;
-    color: ${nn("crimson","#00ffff")};
+    color: ${nn("yellow","#00ffff")};
   }
   }
 
